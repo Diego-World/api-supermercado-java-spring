@@ -1,15 +1,24 @@
 package com.marketapp.demo.models;
 
+import javax.persistence.*;
+import java.util.UUID;
+
+@Entity
 public class Product {
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
+    @Column
     private String name;
+    @Column
     private Double price;
+    @Column
     private Department Department;
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
